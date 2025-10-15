@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.25)
+
 set(project_name cpp-tricks)
 project(project_name)
 
@@ -55,5 +56,7 @@ add_subdirectory(projects/cpp_lang)
 add_subdirectory(projects/high_perf)
 add_subdirectory(edu/books)
 add_subdirectory(projects/safe)
+
+add_subdirectory(projects/cpp26)
 
 add_subdirectory(edu)
