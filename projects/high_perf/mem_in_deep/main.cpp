@@ -30,7 +30,7 @@ namespace helper {
 // Using a namespace to avoid conflicting with MSVC's make_unique (which
 // ADL can sometimes find in unqualified calls).
 template <class T, class... Args>
-static typename enable_if<!is_array<T>::value, unique_ptr<T>>::type make_unique(Args &&...args) {
+static typename enable_if<!is_array<T>::value, unique_ptr<T>>::type make_unique(Args &&... args) {
     return unique_ptr<T>(new T(forward<Args>(args)...));
 }
 }  // end namespace helper
@@ -83,7 +83,8 @@ static int gettok() {
         return tok_number;
     }
     if (LastChar == '#') {
-        do LastChar = getchar();
+        do
+            LastChar = getchar();
         while (LastChar != EOF && LastChar != '\n' && LastChar != '\r');
 
         if (LastChar != EOF) return gettok();

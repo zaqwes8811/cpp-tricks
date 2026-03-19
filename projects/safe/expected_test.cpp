@@ -58,7 +58,7 @@ public:
 
         // construct value in memory of aligned storage
         // using inplace operator new
-        void* ptr = ::new (&data[m_size], std::nothrow) T(std::forward<Args>(args)...);
+        [[maybe_unused]] void* ptr = ::new (&data[m_size], std::nothrow) T(std::forward<Args>(args)...);
         ++m_size;
     }
 

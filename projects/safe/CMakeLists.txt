@@ -1,7 +1,8 @@
 #find_package(iceoryx REQUIRED iceoryx_utils)
 #find_package(tl-expected REQUIRED)
 
-set(CMAKE_CXX_FLAGS "-fno-rtti -fno-exceptions -Wall -Werror -Wl,--wrap=malloc ${CMAKE_CXX_FLAGS}")
+# Doesn't work for clang -Wl,--wrap=malloc
+set(CMAKE_CXX_FLAGS "-fno-rtti -fno-exceptions -Wall -Werror  ${CMAKE_CXX_FLAGS}")
 
 add_executable(SafeUt expected_test.cpp)
 
